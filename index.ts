@@ -4,21 +4,17 @@ let StudentName: String = prompt("Enter Student Name") || "undefined";
 let StudentEnrollment: number = parseInt(prompt("Enter Student Enrollment No") || "0");
 let TotalMarks: number = 500;
 let i: number;
-
 for (i = 0; i < Subjects.length; i++) {
     ObtainedMarks[i] = parseInt(prompt(`Enter Obtained Marks of ${Subjects[i]}: `) || "0");
 }
-
 function sum_of_marks(obtained_marks: number[]): number {
     return obtained_marks.reduce((accumulator, currentValue) => {
         return accumulator + currentValue
     }, 0);
 }
-
 function percentage(obtained_marks: number, total_marks: number): number {
     return (obtained_marks / total_marks) * 100;
 }
-
 function grade(percentage: number): string {
     if (percentage >= 80) {
         return "A+";
@@ -37,15 +33,6 @@ function grade(percentage: number): string {
     }
     return "F";
 }
-
-
-// document.write(`Student Name: ${StudentName}<br>`);
-// document.write(`Student Enrollment No: ${StudentEnrollment}<br>`);
-// document.write(`Obtainer Marks: ${sum_of_marks(ObtainedMarks)}<br>`);
-// document.write(`Total Marks: ${TotalMarks}<br>`);   
-// document.write(`Percentage: ${percentage(sum_of_marks(ObtainedMarks),TotalMarks)}<br>`);
-// document.write(`Grade: ${grade(percentage(sum_of_marks(ObtainedMarks),TotalMarks))}<br>`);
-
 const bodyElement = document.querySelector("body") as HTMLBodyElement;
 bodyElement.innerHTML = `<div class="container">
 <h1>Student Mark Sheet</h1>
